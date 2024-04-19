@@ -1,0 +1,29 @@
+/login "user_name"			Use for log in
+/logout					Use for log out
+/users					Display the list of all users that exist on the domain
+/user "user_uuid"			Display details about the requested user
+/send "user_uuid" "message_body"	Send a message to specific user
+/messages "user_uuid"			List all messages exchanged with the specified user
+/subscribe "team_uuid"			Subscribe to a team and its sub directories
+/subscribed "team_uuid"			List all subscribed teams or list all users subscribed to a team
+/unsubscribe "team_uuid"		Unsubscribe from a team
+ 
+/use ?"team_uuid" ?"channel_uuid" ?"thread_uuid"
+	Sets the command context to a team/channel/thread
+	When the context is not defined (/use):
+ 
+/create	Create a team/channel/thread :
+	/create “team_name” “team_description” : create a new team
+	/create “channel_name” “channel_description” : create a new channel
+	/create “thread_title” “thread_message” : create a new thread
+	/create “comment_body” : create a new reply
+	When a team/channel/thread is created, you can access it using /use
+ 
+/list	Based on the context, display details of the current resource
+	/list : List all existing team/channel/thread/replies depending on where you run the command
+ 
+/info	Based on the context, list all the sub resources
+	/info : display currently selected team/channel/thread details, depending on where you run the command
+	If you use /info without being in a team/channel/thread : display currently logged-in user details
+ 
+/help	display this help message
